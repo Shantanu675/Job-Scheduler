@@ -6,7 +6,7 @@ The system provides authentication, organization-level authorization, project an
 
 ---
 
-## 🚀 Features
+## Features
 
 * JWT authentication
 * Signup, Login and Logout
@@ -36,7 +36,7 @@ The system provides authentication, organization-level authorization, project an
 
 ---
 
-# 🏗️ System Architecture
+# System Architecture
 
 ```text
                               ┌───────────────────────┐
@@ -84,7 +84,7 @@ backend → redis:6379
 
 ---
 
-# 🛠️ Technology Stack
+# Technology Stack
 
 ## Backend
 
@@ -122,7 +122,7 @@ Nginx
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```text
 distributed-job-scheduler/
@@ -163,7 +163,7 @@ distributed-job-scheduler/
 
 ---
 
-# 🗄️ Database Structure
+# Database Structure
 
 Main entities:
 
@@ -181,7 +181,7 @@ dead_letter_jobs
 
 ---
 
-# 🔗 Entity Relationship Diagram
+# Entity Relationship Diagram
 
 ```mermaid
 erDiagram
@@ -309,7 +309,7 @@ erDiagram
 
 ---
 
-# 🔐 Authorization Model
+# Authorization Model
 
 Protected resources follow this ownership chain:
 
@@ -337,7 +337,7 @@ This prevents users from accessing resources belonging to another organization.
 
 ---
 
-# 🔑 Authentication Flow
+# Authentication Flow
 
 ```text
 Login
@@ -379,7 +379,7 @@ Login response:
 
 ---
 
-# 📋 Job Lifecycle
+# Job Lifecycle
 
 ## Successful Job
 
@@ -417,7 +417,7 @@ FAILED
 
 ---
 
-# 👷 Worker Architecture
+# Worker Architecture
 
 Workers are responsible for executing jobs asynchronously.
 
@@ -449,7 +449,7 @@ The scheduler uses heartbeat information to monitor worker health and recover st
 
 ---
 
-# 📦 Queue Scheduling
+# Queue Scheduling
 
 Each queue supports:
 
@@ -482,7 +482,7 @@ Concurrency limit
 
 ---
 
-# 🔄 Retry Strategy
+# Retry Strategy
 
 Retry policies contain:
 
@@ -534,7 +534,7 @@ DLQ
 
 ---
 
-# 📊 Execution History
+# Execution History
 
 Every execution attempt is stored in `job_executions`.
 
@@ -576,7 +576,7 @@ Error Message
 
 ---
 
-# ☠️ Dead Letter Queue
+# Dead Letter Queue
 
 When a job exceeds its maximum retry count, it is moved to the DLQ.
 
@@ -606,7 +606,7 @@ movedAt
 
 ---
 
-# ♻️ DLQ Requeue
+# DLQ Requeue
 
 Endpoint:
 
@@ -637,7 +637,7 @@ Execution Starts Again
 
 ---
 
-# 🖥️ Frontend Pages
+# Frontend Pages
 
 ## Dashboard
 
@@ -728,7 +728,7 @@ Supports:
 
 ---
 
-# 🔌 API Endpoints
+# API Endpoints
 
 ## Authentication
 
@@ -798,7 +798,7 @@ GET /actuator/health
 
 ---
 
-# 🐳 Running with Docker Compose
+# Running with Docker Compose
 
 ## Prerequisites
 
@@ -851,7 +851,7 @@ scheduler-frontend  frontend    Up
 
 ---
 
-# 🌐 Application URLs
+# Application URLs
 
 Frontend:
 
@@ -885,7 +885,7 @@ Expected:
 
 ---
 
-# 🐋 Docker Commands
+# Docker Commands
 
 Start:
 
@@ -931,7 +931,7 @@ docker compose logs redis --tail=100
 
 ---
 
-# 💻 Local Frontend Development
+# Local Frontend Development
 
 ```bash
 cd frontend
@@ -966,7 +966,7 @@ npm run preview
 
 ---
 
-# ☕ Local Backend Development
+# Local Backend Development
 
 ```bash
 cd backend
@@ -988,7 +988,7 @@ http://localhost:8080
 
 ---
 
-# 🧪 Example End-to-End Workflow
+# Example End-to-End Workflow
 
 ## Successful Job
 
@@ -1038,7 +1038,7 @@ Duration: 104 ms
 
 ---
 
-# ❌ Failure → Retry → DLQ
+# Failure → Retry → DLQ
 
 ```text
 Create TEST_FAIL Job
@@ -1088,7 +1088,7 @@ Attempt 3 → FAILED
 
 ---
 
-# ♻️ DLQ → Requeue Workflow
+# DLQ → Requeue Workflow
 
 ```text
 Dead Letter Queue
@@ -1117,7 +1117,7 @@ Execution Starts Again
 
 ---
 
-# ✅ Testing
+# Testing
 
 ## Frontend Lint
 
@@ -1153,7 +1153,7 @@ docker compose ps
 
 ---
 
-# ✅ Verified Functionality
+# Verified Functionality
 
 ## Authentication
 
@@ -1215,7 +1215,7 @@ ESLint                     ✅
 
 ---
 
-# 🔄 Complete System Flow
+# Complete System Flow
 
 ```text
                     ┌──────────────┐
@@ -1263,7 +1263,7 @@ ESLint                     ✅
 
 ---
 
-# 🎯 Project Goal
+# Project Goal
 
 The system provides a reliable distributed background-job platform where jobs can be:
 
@@ -1308,6 +1308,6 @@ Dockerized Deployment
 
 ---
 
-# 👨‍💻 Author
+# Author
 
-Distributed Job Scheduler project developed as an internship/engineering assignment demonstrating backend engineering, distributed systems, reliability, API design, database design, and full-stack implementation.
+Distributed Job Scheduler project developed by Shantanu675 demonstrating backend engineering, distributed systems, reliability, API design, database design, and full-stack implementation.
