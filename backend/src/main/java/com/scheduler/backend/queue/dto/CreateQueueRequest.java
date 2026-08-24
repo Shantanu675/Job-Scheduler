@@ -20,6 +20,8 @@ public class CreateQueueRequest {
     @Min(1)
     private Integer maxConcurrency = 10;
 
+    private Long retryPolicyId;
+
     public Long getProjectId() {
         return projectId;
     }
@@ -50,5 +52,13 @@ public class CreateQueueRequest {
 
     public void setMaxConcurrency(Integer maxConcurrency) {
         this.maxConcurrency = maxConcurrency;
+    }
+
+    public Long getRetryPolicyId() {
+        return retryPolicyId;
+    }
+
+    public void setRetryPolicyId(Long retryPolicyId) {
+        this.retryPolicyId = retryPolicyId;
     }
 }

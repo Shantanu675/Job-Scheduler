@@ -27,6 +27,7 @@ public class AuthController {
         return new AuthResponse(
                 null,
                 user.getId(),
+                user.getOrganizationId(),
                 user.getEmail(),
                 user.getName(),
                 user.getRole()

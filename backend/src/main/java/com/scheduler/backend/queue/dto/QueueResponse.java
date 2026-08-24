@@ -10,6 +10,8 @@ public record QueueResponse(
         String name,
         Integer priority,
         Integer maxConcurrency,
+        Long retryPolicyId,
+        Boolean paused,
         Instant createdAt,
         Instant updatedAt
 ) {
@@ -21,6 +23,8 @@ public record QueueResponse(
                 queue.getName(),
                 queue.getPriority(),
                 queue.getMaxConcurrency(),
+                queue.getRetryPolicyId(),
+                queue.getPaused(),
                 queue.getCreatedAt(),
                 queue.getUpdatedAt()
         );

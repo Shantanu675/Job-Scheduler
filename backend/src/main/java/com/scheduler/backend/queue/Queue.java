@@ -23,6 +23,12 @@ public class Queue {
     @Column(name = "project_id", nullable = false)
     private Long projectId;
 
+    @Column(nullable = false)
+    private Boolean paused = false;
+
+    @Column(name = "retry_policy_id")
+    private Long retryPolicyId;
+
     @Column(nullable = false, length = 100)
     private String name;
 
@@ -92,5 +98,21 @@ public class Queue {
 
     public Instant getUpdatedAt() {
         return updatedAt;
+    }
+
+    public Boolean getPaused() {
+        return paused;
+    }
+
+    public void setPaused(Boolean paused) {
+        this.paused = paused;
+    }
+
+    public Long getRetryPolicyId() {
+        return retryPolicyId;
+    }
+
+    public void setRetryPolicyId(Long retryPolicyId) {
+        this.retryPolicyId = retryPolicyId;
     }
 }

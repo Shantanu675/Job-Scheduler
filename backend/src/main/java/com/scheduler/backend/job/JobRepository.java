@@ -79,4 +79,22 @@ public interface JobRepository extends JpaRepository<Job, Long> {
         AND j.claimedAt < :threshold
     """)
     int recoverStaleJobs(@Param("threshold") Instant threshold);
+
+    @Query("""
+    SELECT COUNT(j)
+    FROM Job j
+    WHERE j.queueId = :queueId
+    """)
+    long countByQueueId(@Param("queueId") Long queueId);
+
+    @Query("""
+    SELECT COUNT(j)
+    FROM Job j
+    WHERE j.queueId = :queueId
+      AND j.status = :status
+    """)
+    long countByQueueIdAndStatus(
+            @Param("queueId") Long queueId,
+            @Param("status") JobStatus status
+    );
 }

@@ -84,6 +84,10 @@ public class WorkerService {
                         )
                 );
 
+        if (Boolean.TRUE.equals(queue.getPaused())) {
+            return null;
+        }
+
         /*
          * Count jobs that currently occupy a concurrency slot.
          *

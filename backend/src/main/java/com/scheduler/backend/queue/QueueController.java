@@ -5,6 +5,8 @@ import com.scheduler.backend.queue.dto.QueueResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import com.scheduler.backend.queue.dto.QueueStatsResponse;
+import com.scheduler.backend.queue.dto.UpdateQueueRequest;
 
 import java.util.List;
 
@@ -38,5 +40,34 @@ public class QueueController {
             @PathVariable Long id
     ) {
         return queueService.getQueue(id);
+    }
+
+    @PostMapping("/{id}/pause")
+    public QueueResponse pauseQueue(
+            @PathVariable Long id
+    ) {
+        return queueService.pauseQueue(id);
+    }
+
+    @PostMapping("/{id}/resume")
+    public QueueResponse resumeQueue(
+            @PathVariable Long id
+    ) {
+        return queueService.resumeQueue(id);
+    }
+
+    @GetMapping("/{id}/stats")
+    public QueueStatsResponse getStats(
+            @PathVariable Long id
+    ) {
+        return queueService.getStats(id);
+    }
+
+    @PutMapping("/{id}")
+    public QueueResponse updateQueue(
+            @PathVariable Long id,
+            @Valid @RequestBody UpdateQueueRequest request
+    ) {
+        return queueService.updateQueue(id, request);
     }
 }

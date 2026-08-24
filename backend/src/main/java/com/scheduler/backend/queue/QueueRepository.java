@@ -9,6 +9,11 @@ public interface QueueRepository extends JpaRepository<Queue, Long> {
 
     List<Queue> findByProjectId(Long projectId);
 
+    Optional<Queue> findByIdAndProjectId(
+            Long id,
+            Long projectId
+    );
+
     Optional<Queue> findByProjectIdAndName(
             Long projectId,
             String name
