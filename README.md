@@ -78,33 +78,7 @@ The system provides authentication, organization-level authorization, project an
 
 # System Architecture
 
-```text
-                              ┌───────────────────────┐
-                              │        Browser        │
-                              │     React Frontend    │
-                              │        :5173          │
-                              └───────────┬───────────┘
-                                          │
-                                     HTTP + JWT
-                                          │
-                                          ▼
-                              ┌───────────────────────┐
-                              │     Spring Boot       │
-                              │        Backend        │
-                              │         :8080         │
-                              └───────────┬───────────┘
-                                          │
-                        ┌─────────────────┼─────────────────┐
-                        │                 │                 │
-                        ▼                 ▼                 ▼
-                 ┌────────────┐   ┌────────────┐   ┌───────────────┐
-                 │   MySQL    │   │   Redis    │   │    Workers    │
-                 │   :3306    │   │   :6379    │   │               │
-                 │            │   │            │   │   worker-1    │
-                 │ Scheduler  │   │ Distributed│   │   worker-2    │
-                 │ Database   │   │Coordination│   │      ...      │
-                 └────────────┘   └────────────┘   └───────────────┘
-```
+![System Architecture](docs/screenshots/system-architecture.png)
 
 ### Docker Host Ports
 
