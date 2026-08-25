@@ -36,6 +36,46 @@ The system provides authentication, organization-level authorization, project an
 
 ---
 
+# Screenshots
+
+## Login
+
+![Login](docs/screenshots/login.png)
+
+## Dashboard
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+## Projects
+
+![Projects](docs/screenshots/projects.png)
+
+## Queues
+
+![Queues](docs/screenshots/queues.png)
+
+## Jobs
+
+![Jobs](docs/screenshots/jobs.png)
+
+## Workers
+
+![Workers](docs/screenshots/workers.png)
+
+## Retry Policies
+
+![Retry Policies](docs/screenshots/retry-policies.png)
+
+## Dead Letter Queue
+
+![Dead Letter Queue](docs/screenshots/dlq.png)
+
+## Requeue
+
+![Requeue](docs/screenshots/requeue.png)
+
+---
+
 # System Architecture
 
 ```text
